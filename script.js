@@ -5,20 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById('registration-form"');
   const formFeedback = document.getElementById("form-feedback");
   let isValid = true;
-  let message = [];
+  let messages = [];
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (userName.length < 3) {
       isValid = false;
-      message.push("username's length must be longer than 3");
+      messages.push("username's length must be longer than 3");
     }
     if (!email.includes("@") && !email.includes(".")) {
       isValid = false;
-      message.push("email must be valid");
+      messages.push("email must be valid");
     }
     if (password.length < 8) {
       isValid = false;
-      message.push("password's length must be longer than 8");
+      messages.push("password's length must be longer than 8");
     }
     formFeedback.style.display = "block";
     if (isValid) {
