@@ -7,10 +7,10 @@ async function fetchUserData() {
     dataContainer.innerHTML = "";
     const userList = `<ul>
     ${users.forEach((user) => {
-      `<li>${user}</li>`;
+      `<li>${user.name}</li>`;
     })}
     </ul>`;
-    dataContainer.innerHTML = userList;
+    dataContainer.appendChild(userList);
   } catch (error) {
     dataContainer.innerHTML = "Failed to load user data.";
   }
