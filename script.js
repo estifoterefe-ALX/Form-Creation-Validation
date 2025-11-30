@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const userName = document.getElementById("username").value.trim();
+  const username = document.getElementById("username").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const form = document.getElementById('registration-form"');
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let messages = [];
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (userName.length < 3) {
+    if (username.length < 3) {
       isValid = false;
       messages.push("username's length must be longer than 3");
     }
