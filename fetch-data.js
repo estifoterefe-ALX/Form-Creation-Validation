@@ -10,7 +10,8 @@ async function fetchUserData() {
       `<li>${user.name}</li>`;
     })}
     </ul>`;
-    dataContainer.appendChild(userList);
+    dataContainer.appendChild(document.createElement("ul")).innerHTML =
+      userList;
   } catch (error) {
     dataContainer.innerHTML = "Failed to load user data.";
   }
