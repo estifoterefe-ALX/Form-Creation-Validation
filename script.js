@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const form = document.getElementById('registration-form"');
-  const formFeedback = document.getElementById("form-feedback");
+  const feedbackDiv = document.getElementById("form-feedback");
   let isValid = true;
   let messages = [];
   form.addEventListener("submit", (event) => {
@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
       messages.push("password's length must be longer than 8");
     }
-    formFeedback.style.display = "block";
+    feedbackDiv.style.display = "block";
     if (isValid) {
-      formFeedback.innerText = "Registration successful!";
-      formFeedback.style.color = "#28a745";
+      feedbackDiv.innerText = "Registration successful!";
+      feedbackDiv.style.color = "#28a745";
     } else {
-      formFeedback.innerHTML = message.join("<br>");
-      formFeedback.style.color = "#dc3545";
+      feedbackDiv.innerHTML = messages.join("<br>");
+      feedbackDiv.style.color = "#dc3545";
     }
   });
 });
